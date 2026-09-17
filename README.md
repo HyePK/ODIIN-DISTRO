@@ -14,5 +14,8 @@ Working test features:
 - Responsive layout
 - Browser-local catalog persistence
 - Structured browser tools for listing and creating test releases when supported
+- ODIIN spectrum branding with an animated global identity
+- Artist profile collection and downloadable digital EPK generation
+- Structured artist-profile and EPK actions for the upcoming agent phase
 
 Production backend connections (Supabase/storage/payments/DSP delivery) are not enabled in this prototype.
