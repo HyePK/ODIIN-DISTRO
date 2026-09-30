@@ -34,6 +34,25 @@ Platforms are classified by access model:
 
 Spotify, Apple Music, Amazon, TikTok, Meta, Netflix, Hulu, Tubi, and most FAST outlets require commercial approval or an approved aggregator for content delivery. A consumer/developer API key does not create distributor rights.
 
+### Six-part readiness status
+
+The Connections dashboard never treats one login, import, or contract as proof that every provider capability is active. Each platform connection stores six independent fields:
+
+1. `account_authentication_status` — ODIIN can authenticate to the account or delegated provider connection.
+2. `data_import_status` — catalog, usage, registration, or statement data can be imported successfully.
+3. `registration_authority_status` — ODIIN has both legal authority and a supported technical route to submit registrations or claims.
+4. `content_delivery_status` — ODIIN can deliver releases, films, channels, updates, and takedowns.
+5. `royalty_collection_status` — ODIIN is authorized and configured to collect or reconcile royalties.
+6. `production_testing_status` — an end-to-end production test has been completed and verified.
+
+The legacy `status` field is now a trigger-maintained compatibility summary. It is calculated from the six readiness fields and cannot be edited from the dashboard. Production-ready means the production test passed and no applicable dimension remains blocked by a contract, credentials, authorization, pause, expiry, or error.
+
+Current verified distinctions:
+
+- Mogul account access and data import work; registration and royalty-collection authority still require completion.
+- BMI and SoundExchange data are available through the authenticated Mogul connection; direct registration and collection authority remain separate.
+- Labelcaster statement import works; release delivery still requires official production credentials and mapping.
+
 ## Connection order
 
 1. Mogul and Labelcaster: obtain written API/export specifications, sandbox credentials, rate limits, webhooks, and data-processing terms.
@@ -55,4 +74,3 @@ Spotify, Apple Music, Amazon, TikTok, Meta, Netflix, Hulu, Tubi, and most FAST o
 ## Credentials still required
 
 For each provider, ODIIN needs the legal account owner, contract status, developer/partner approval, sandbox and production endpoints, authentication method, scopes, credential secret name, webhook signing secret, and a technical contact. The dashboard can manage and test these connections after the provider grants access; it cannot bypass provider approval.
-
